@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home"
+    app:startDestination="@id/conteudoFragment">
+
+    <fragment
+        android:id="@+id/conteudoFragment"
+        android:name="com.deny22.reserveroomif.fragments.ConteudoFragment"
+        android:label="ConteudoFragment" >
+        <action
+            android:id="@+id/action_conteudoFragment_to_blocosFragment"
+            app:destination="@id/blocosFragment" />
+        <action
+            android:id="@+id/action_conteudoFragment_to_chatBotActivity"
+            app:destination="@id/chatBotActivity" />
+        <action
+            android:id="@+id/action_conteudoFragment_to_todasAsSalasFragment"
+            app:destination="@id/todasAsSalasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blocosFragment"
+        android:name="com.deny22.reserveroomif.fragments.BlocosFragment"
+        android:label="BlocosFragment" >
+        <action
+            android:id="@+id/action_blocosFragment_to_blocoSelecionadoFragment"
+            app:destination="@id/blocoSelecionadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blocoSelecionadoFragment"
+        android:name="com.deny22.reserveroomif.fragments.BlocoSelecionadoFragment"
+        android:label="BlocoSelecionadoFragment" >
+        <action
+            android:id="@+id/action_blocoSelecionadoFragment_to_salaSelecionadaFragment"
+            app:destination="@id/salaSelecionadaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salaSelecionadaFragment"
+        android:name="com.deny22.reserveroomif.fragments.SalaSelecionadaFragment"
+        android:label="SalaSelecionadaFragment" >
+        <action
+            android:id="@+id/action_salaSelecionadaFragment_to_agendamentoFragment"
+            app:destination="@id/agendamentoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agendamentoFragment"
+        android:name="com.deny22.reserveroomif.fragments.AgendamentoFragment"
+        android:label="AgendamentoFragment" >
+        <action
+            android:id="@+id/action_agendamentoFragment_to_agendarHorasFragment"
+            app:destination="@id/agendarHorasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agendarHorasFragment"
+        android:name="com.deny22.reserveroomif.fragments.AgendarHorasFragment"
+        android:label="AgendarHorasFragment" >
+        <action
+            android:id="@+id/action_agendarHorasFragment_to_agendamentReviewFragment"
+            app:destination="@id/agendamentReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agendamentReviewFragment"
+        android:name="com.deny22.reserveroomif.fragments.AgendamentReviewFragment"
+        android:label="AgendamentReviewFragment" >
+        <action
+            android:id="@+id/action_agendamentReviewFragment_to_agendamentoAwaitFragment"
+            app:destination="@id/agendamentoAwaitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agendamentoAwaitFragment"
+        android:name="com.deny22.reserveroomif.fragments.AgendamentoAwaitFragment"
+        android:label="AgendamentoAwaitFragment" >
+        <action
+            android:id="@+id/action_agendamentoAwaitFragment_to_conteudoFragment"
+            app:destination="@id/conteudoFragment"
+            app:popUpTo="@id/conteudoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_agendamentoAwaitFragment_to_comprovanteFragment"
+            app:destination="@id/comprovanteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comprovanteFragment"
+        android:name="com.deny22.reserveroomif.fragments.ComprovanteFragment"
+        android:label="ComprovanteFragment" >
+        <action
+            android:id="@+id/action_comprovanteFragment_to_conteudoFragment"
+            app:destination="@id/conteudoFragment"
+            app:popUpTo="@id/conteudoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/chatBotActivity"
+        android:name="com.deny22.reserveroomif.activity.ChatBotActivity"
+        android:label="ChatBotActivity" />
+    <fragment
+        android:id="@+id/todasAsSalasFragment"
+        android:name="com.deny22.reserveroomif.fragments.TodasAsSalasFragment"
+        android:label="TodasAsSalasFragment" >
+        <action
+            android:id="@+id/action_todasAsSalasFragment_to_salaSelecionadaFragment"
+            app:destination="@id/salaSelecionadaFragment" />
+    </fragment>
+</navigation>

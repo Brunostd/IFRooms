@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_color">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idIFChats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/idIFMsgs" />
+    <RelativeLayout
+        android:id="@+id/idIFMsgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <EditText
+            android:id="@+id/idEditMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite sua mensagem"
+            android:layout_margin="3dp"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/idFABSend"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idFABSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_send"
+            android:backgroundTint="@color/fab_color"
+            app:tint="@color/white"
+            app:fabCustomSize="45dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
