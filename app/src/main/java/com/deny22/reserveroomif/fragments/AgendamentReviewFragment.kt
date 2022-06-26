@@ -72,7 +72,8 @@ class AgendamentReviewFragment : Fragment() {
                                     realizarMinhaReserva(auxHorario)
                                     val action = AgendamentReviewFragmentDirections.actionAgendamentReviewFragmentToAgendamentoAwaitFragment(
                                         auxHorario,
-                                        args.confirmacaoSalaReservar
+                                        args.confirmacaoSalaReservar,
+                                        args.data
                                     )
                                     findNavController().navigate(action)
                                 } .addOnFailureListener {
@@ -98,7 +99,8 @@ class AgendamentReviewFragment : Fragment() {
                                     realizarMinhaReserva(auxHorario)
                                     val action = AgendamentReviewFragmentDirections.actionAgendamentReviewFragmentToAgendamentoAwaitFragment(
                                         auxHorario,
-                                        args.confirmacaoSalaReservar
+                                        args.confirmacaoSalaReservar,
+                                        args.data
                                     )
                                     findNavController().navigate(action)
                                 } .addOnFailureListener {
@@ -122,6 +124,7 @@ class AgendamentReviewFragment : Fragment() {
             "idEmail" to emailBase64,
             "sala" to args.confirmacaoSalaReservar.name,
             "horario" to horario,
+            "data" to args.data,
             "assentos" to args.confirmacaoSalaReservar.assentos.toString(),
             "computadores" to args.confirmacaoSalaReservar.computadores.toString(),
             "projetores" to args.confirmacaoSalaReservar.projetores.toString(),

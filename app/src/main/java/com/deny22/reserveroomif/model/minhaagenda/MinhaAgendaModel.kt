@@ -5,6 +5,7 @@ class MinhaAgendaModel(
     var assentos: String = "",
     var computadores: String = "",
     var horario: String = "",
+    var data: String = "",
     var projetores: String = "",
     var quadros: String = "",
     var sala: String = ""

@@ -40,7 +40,7 @@ class AgendamentoAwaitFragment : Fragment() {
         timer.start()
 
         binding.button3.setOnClickListener {
-            val action = AgendamentoAwaitFragmentDirections.actionAgendamentoAwaitFragmentToComprovanteFragment(args.horarioAwait, args.salaAwait)
+            val action = AgendamentoAwaitFragmentDirections.actionAgendamentoAwaitFragmentToComprovanteFragment(args.horarioAwait, args.salaAwait, args.dataAwait)
             findNavController().navigate(action)
         }
 

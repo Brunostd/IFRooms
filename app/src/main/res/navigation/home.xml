@@ -112,6 +112,9 @@
         <argument
             android:name="salaAwait"
             app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
+        <argument
+            android:name="dataAwait"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/comprovanteFragment"
@@ -128,6 +131,9 @@
         <argument
             android:name="salaComprovant"
             app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
+        <argument
+            android:name="dataComprovant"
+            app:argType="string" />
     </fragment>
     <activity
         android:id="@+id/chatBotActivity"
