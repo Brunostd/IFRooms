@@ -32,7 +32,7 @@
                 android:background="@drawable/toolkit_background_agendamento_review">
 
                 <TextView
-                    android:id="@+id/textView76"
+                    android:id="@+id/textComprovantName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
@@ -45,7 +45,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView69"
+                    android:id="@+id/textComprovantHorario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -55,17 +55,17 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView76" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantName" />
 
                 <TextView
-                    android:id="@+id/textView78"
+                    android:id="@+id/textComprovantUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Professora Cynthia"
                     android:textColor="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView69" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantHorario" />
 
                 <com.google.android.material.divider.MaterialDivider
                     android:id="@+id/materialDivider5"
@@ -77,56 +77,68 @@
                     app:dividerInsetStart="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView78" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantUsuario" />
 
                 <TextView
-                    android:id="@+id/textView70"
+                    android:id="@+id/textComprovantAssentos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
-                    android:text="30 Lugares"
+                    android:layout_marginEnd="8dp"
+                    android:text="30"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView18"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/materialDivider5" />
 
                 <TextView
-                    android:id="@+id/textView74"
+                    android:id="@+id/textComprovantComputadores"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30 Computadores"
+                    android:layout_marginEnd="8dp"
+                    android:text="30"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView19"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView70" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantAssentos" />
 
                 <TextView
-                    android:id="@+id/textView71"
+                    android:id="@+id/textComprovantProjetores"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 Projetores"
+                    android:layout_marginEnd="8dp"
+                    android:text="2"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView20"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantComputadores" />
 
                 <TextView
-                    android:id="@+id/textView72"
+                    android:id="@+id/textComprovantQuadros"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 Quadros"
+                    android:layout_marginEnd="8dp"
+                    android:text="2"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView28"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantProjetores" />
 
                 <Button
                     android:id="@+id/button4"
@@ -154,8 +166,61 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView72"
+                    app:layout_constraintTop_toBottomOf="@+id/textComprovantQuadros"
                     app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Assentos"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textComprovantAssentos"
+                    app:layout_constraintTop_toBottomOf="@+id/materialDivider5" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Computadores"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textComprovantComputadores"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Projetores"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textComprovantProjetores"
+                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quadros"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textComprovantQuadros"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>

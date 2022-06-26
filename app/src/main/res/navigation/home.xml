@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
     app:startDestination="@id/conteudoFragment">
 
@@ -17,6 +18,9 @@
         <action
             android:id="@+id/action_conteudoFragment_to_todasAsSalasFragment"
             app:destination="@id/todasAsSalasFragment" />
+        <action
+            android:id="@+id/action_conteudoFragment_to_minhaAgendaFragment"
+            app:destination="@id/minhaAgendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/blocosFragment"
@@ -33,6 +37,9 @@
         <action
             android:id="@+id/action_blocoSelecionadoFragment_to_salaSelecionadaFragment"
             app:destination="@id/salaSelecionadaFragment" />
+        <argument
+            android:name="blocoSelecionado"
+            app:argType="com.deny22.reserveroomif.model.blocos.BlocoModel" />
     </fragment>
     <fragment
         android:id="@+id/salaSelecionadaFragment"
@@ -41,6 +48,9 @@
         <action
             android:id="@+id/action_salaSelecionadaFragment_to_agendamentoFragment"
             app:destination="@id/agendamentoFragment" />
+        <argument
+            android:name="salaSelecionada"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
     </fragment>
     <fragment
         android:id="@+id/agendamentoFragment"
@@ -49,6 +59,9 @@
         <action
             android:id="@+id/action_agendamentoFragment_to_agendarHorasFragment"
             app:destination="@id/agendarHorasFragment" />
+        <argument
+            android:name="agendamentoSala"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
     </fragment>
     <fragment
         android:id="@+id/agendarHorasFragment"
@@ -57,6 +70,12 @@
         <action
             android:id="@+id/action_agendarHorasFragment_to_agendamentReviewFragment"
             app:destination="@id/agendamentReviewFragment" />
+        <argument
+            android:name="agendarSalaHoras"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
+        <argument
+            android:name="data"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/agendamentReviewFragment"
@@ -65,6 +84,15 @@
         <action
             android:id="@+id/action_agendamentReviewFragment_to_agendamentoAwaitFragment"
             app:destination="@id/agendamentoAwaitFragment" />
+        <argument
+            android:name="data"
+            app:argType="string" />
+        <argument
+            android:name="horario"
+            app:argType="string" />
+        <argument
+            android:name="confirmacaoSalaReservar"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
     </fragment>
     <fragment
         android:id="@+id/agendamentoAwaitFragment"
@@ -78,6 +106,12 @@
         <action
             android:id="@+id/action_agendamentoAwaitFragment_to_comprovanteFragment"
             app:destination="@id/comprovanteFragment" />
+        <argument
+            android:name="horarioAwait"
+            app:argType="string" />
+        <argument
+            android:name="salaAwait"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
     </fragment>
     <fragment
         android:id="@+id/comprovanteFragment"
@@ -88,6 +122,12 @@
             app:destination="@id/conteudoFragment"
             app:popUpTo="@id/conteudoFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="horarioComprovant"
+            app:argType="string" />
+        <argument
+            android:name="salaComprovant"
+            app:argType="com.deny22.reserveroomif.model.SalasBlocoModel" />
     </fragment>
     <activity
         android:id="@+id/chatBotActivity"
@@ -101,4 +141,9 @@
             android:id="@+id/action_todasAsSalasFragment_to_salaSelecionadaFragment"
             app:destination="@id/salaSelecionadaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/minhaAgendaFragment"
+        android:name="com.deny22.reserveroomif.fragments.MinhaAgendaFragment"
+        android:label="fragment_minha_agenda"
+        tools:layout="@layout/fragment_minha_agenda" />
 </navigation>

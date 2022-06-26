@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ReserveRoomIF"
         tools:targetApi="31">
         <activity
+            android:name=".activity.CadastroActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ChatBotActivity"
             android:exported="false" />
         <activity

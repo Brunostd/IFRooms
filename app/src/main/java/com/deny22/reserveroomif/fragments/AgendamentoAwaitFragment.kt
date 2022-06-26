@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.deny22.reserveroomif.R
 import com.deny22.reserveroomif.databinding.FragmentAgendamentoAwaitBinding
 
 class AgendamentoAwaitFragment : Fragment() {
     private var _binding: FragmentAgendamentoAwaitBinding? = null
     private val binding get() = _binding!!
+    private val args: AgendamentoAwaitFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +40,8 @@ class AgendamentoAwaitFragment : Fragment() {
         timer.start()
 
         binding.button3.setOnClickListener {
-            findNavController().navigate(R.id.action_agendamentoAwaitFragment_to_comprovanteFragment)
+            val action = AgendamentoAwaitFragmentDirections.actionAgendamentoAwaitFragmentToComprovanteFragment(args.horarioAwait, args.salaAwait)
+            findNavController().navigate(action)
         }
 
         binding.backAwait.setOnClickListener {

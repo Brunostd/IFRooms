@@ -6,12 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.deny22.ifreserverdroom.adapter.TodasSalasAdapter
 import com.deny22.reserveroomif.R
 import com.deny22.reserveroomif.databinding.FragmentConteudoBinding
 import com.deny22.reserveroomif.model.SalasModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class ConteudoFragment : Fragment() {
     private var _binding: FragmentConteudoBinding? = null
@@ -19,6 +24,8 @@ class ConteudoFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    var mUser: FirebaseAuth = FirebaseAuth.getInstance()
+    private var db = Firebase.firestore
     var listaSalas: MutableList<SalasModel> = arrayListOf()
 
     override fun onCreateView(
@@ -41,10 +48,17 @@ class ConteudoFragment : Fragment() {
             peekHeight=150
             this.state= BottomSheetBehavior.STATE_COLLAPSED
         }
+
+        binding.textHomeNamePerfil.text = mUser.currentUser?.email
+        mUser.currentUser?.photoUrl.let {
+            if (it != null){
+                Glide.with(requireContext()).load(it).into(binding.imageHomePerfil)
+            }
+        }
     }
 
     fun setRecyclerView(){
-        addListaSalas()
+        //addListaSalas()
         binding.recyclerTodasAsSalas.adapter = TodasSalasAdapter(listaSalas)
     }
 
@@ -72,7 +86,7 @@ class ConteudoFragment : Fragment() {
         }
 
         binding.cardMinhaAgenda.setOnClickListener {
-            dialogConstruction()
+            findNavController().navigate(R.id.action_conteudoFragment_to_minhaAgendaFragment)
         }
 
         binding.cardRegrasAgendamento.setOnClickListener {
@@ -84,6 +98,7 @@ class ConteudoFragment : Fragment() {
         }
 
         binding.textExit.setOnClickListener {
+            mUser.signOut()
             activity?.finish()
         }
     }
@@ -104,6 +119,7 @@ class ConteudoFragment : Fragment() {
             }
             .show()
     }
+
 
     fun addListaSalas(){
         var p = SalasModel("sala 1", R.drawable.computer_lab, 30)

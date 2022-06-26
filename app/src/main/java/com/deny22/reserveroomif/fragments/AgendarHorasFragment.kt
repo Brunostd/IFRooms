@@ -5,15 +5,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.deny22.reserveroomif.R
 import com.deny22.reserveroomif.databinding.FragmentAgendarHorasBinding
+import com.deny22.reserveroomif.model.reservar.ReservarModel
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 
 class AgendarHorasFragment : Fragment() {
     private var _binding: FragmentAgendarHorasBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val args: AgendarHorasFragmentArgs by navArgs()
+    private var db = Firebase.firestore
+
+    private var auxHorario: String = ""
+    private var auxData: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,27 +34,56 @@ class AgendarHorasFragment : Fragment() {
         _binding = FragmentAgendarHorasBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.textView45.setOnClickListener {
-            binding.textView62.visibility = View.VISIBLE
-            binding.textView62.text = "Você escolheu\nturno da noite\n18:30 as 20:00"
-            binding.button2.isEnabled = true
-        }
+        getHorarios(args.agendarSalaHoras.name, args.data)
 
-        binding.textView46.setOnClickListener {
-            binding.textView62.visibility = View.VISIBLE
-            binding.textView62.text = "Horário\njá agendado\nescolha outro"
-            binding.button2.isEnabled = false
-        }
+        setListerner()
+
+        return view
+    }
+
+    fun setListerner(){
 
         binding.backAgendamentHorario.setOnClickListener {
             findNavController().popBackStack()
         }
 
         binding.button2.setOnClickListener {
-            findNavController().navigate(R.id.action_agendarHorasFragment_to_agendamentReviewFragment)
+            val action = AgendarHorasFragmentDirections.actionAgendarHorasFragmentToAgendamentReviewFragment(auxData, auxHorario, args.agendarSalaHoras)
+            findNavController().navigate(action)
         }
 
-        return view
+        binding.textHorario1.setOnClickListener {
+            binding.textView62.text = "Você selecionou\n"+binding.textHorario1.text.toString()
+            binding.textView62.visibility = View.VISIBLE
+            auxHorario = binding.textHorario1.text.toString()
+        }
+
+        binding.textHorario2.setOnClickListener {
+            binding.textView62.text = "Você selecionou\n"+binding.textHorario2.text.toString()
+            binding.textView62.visibility = View.VISIBLE
+            auxHorario = binding.textHorario2.text.toString()
+        }
+
+    }
+
+    fun getHorarios(sala: String, data: String){
+
+        var reservar = ReservarModel()
+
+        db.collection("reservar")
+            .whereEqualTo("data", data)
+            .whereEqualTo("sala", sala)
+            .get()
+            .addOnSuccessListener { result ->
+                for(documents in result){
+                    var note = documents.toObject(ReservarModel::class.java)
+
+                    reservar = note
+                }
+                binding.textHorario1.text = reservar.horario1
+                binding.textHorario2.text = reservar.horario2
+                auxData = reservar.data
+            }
     }
 
     override fun onDestroyView() {

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "918927703194",
+    "project_id": "ifrooms",
+    "storage_bucket": "ifrooms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918927703194:android:649d5a60070c38de777323",
+        "android_client_info": {
+          "package_name": "com.deny22.reserveroomif"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918927703194-l2a06fjbh0c75orrjksfg11vff7eg01d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deny22.reserveroomif",
+            "certificate_hash": "237852d49af7c639ee8c0633aae9d85b5f8e8949"
+          }
+        },
+        {
+          "client_id": "918927703194-m1vir2ob0v98dvmctf1rpj7ur160urn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1mYN0hKQlXzrLF89SzSW8qwgcEO94VkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918927703194-m1vir2ob0v98dvmctf1rpj7ur160urn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
