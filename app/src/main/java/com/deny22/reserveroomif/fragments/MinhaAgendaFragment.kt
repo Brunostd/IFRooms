@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.deny22.reserveroomif.R
 import com.deny22.reserveroomif.adapter.MinhaAgendaAdapter
 import com.deny22.reserveroomif.databinding.FragmentMinhaAgendaBinding
@@ -33,8 +34,15 @@ class MinhaAgendaFragment : Fragment() {
         val view = binding.root
 
         getMinhaAgenda()
+        setListerner()
 
         return view
+    }
+
+    fun setListerner(){
+        binding.backMinhaAgenda.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     fun getMinhaAgenda(){

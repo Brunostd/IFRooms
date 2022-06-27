@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/activity_cadastro.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/agendamento_rapido.xml" value="0.358695652173913" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_agendament_review.xml" value="0.18802083333333333" />
@@ -11,8 +11,9 @@
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_agendar_horas.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_bloco_selecionado.xml" value="0.25" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_blocos.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_comprovant_minha_agenda.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_comprovante.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_conteudo.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_conteudo.xml" value="0.33" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_minha_agenda.xml" value="0.22" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_sala_selecionada.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/moise/AndroidStudioProjects/IFRooms/app/src/main/res/layout/fragment_todas_as_salas.xml" value="0.358695652173913" />

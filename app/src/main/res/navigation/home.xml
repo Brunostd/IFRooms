@@ -151,5 +151,23 @@
         android:id="@+id/minhaAgendaFragment"
         android:name="com.deny22.reserveroomif.fragments.MinhaAgendaFragment"
         android:label="fragment_minha_agenda"
-        tools:layout="@layout/fragment_minha_agenda" />
+        tools:layout="@layout/fragment_minha_agenda" >
+        <action
+            android:id="@+id/action_minhaAgendaFragment_to_comprovantMinhaAgendaFragment"
+            app:destination="@id/comprovantMinhaAgendaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comprovantMinhaAgendaFragment"
+        android:name="com.deny22.reserveroomif.fragments.ComprovantMinhaAgendaFragment"
+        android:label="fragment_comprovant_minha_agenda"
+        tools:layout="@layout/fragment_comprovant_minha_agenda" >
+        <argument
+            android:name="comprovantMinhaAgenda"
+            app:argType="com.deny22.reserveroomif.model.minhaagenda.MinhaAgendaModel" />
+        <action
+            android:id="@+id/action_comprovantMinhaAgendaFragment_to_conteudoFragment"
+            app:destination="@id/conteudoFragment"
+            app:popUpTo="@id/conteudoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

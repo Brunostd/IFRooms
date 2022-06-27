@@ -42,11 +42,13 @@
 
             <TextView
                 android:id="@+id/textHomeNamePerfil"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Bruno"
                 android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewEsconderPerfil"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageHomePerfil"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -54,14 +56,12 @@
                 android:id="@+id/imageViewEsconderPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="150dp"
                 android:background="#FF9800"
                 android:backgroundTint="#FF9800"
                 android:src="@drawable/ic_baseline_expand_more_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.133"
-                app:layout_constraintStart_toEndOf="@+id/textHomeNamePerfil"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <FrameLayout
@@ -69,12 +69,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="18dp"
                 android:background="@drawable/toolkit_background_gradient_rounded_roxo"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageHomePerfil"
+                app:layout_constraintTop_toBottomOf="@+id/textHomeNamePerfil"
                 tools:visibility="visible">
 
                 <LinearLayout
@@ -336,7 +337,8 @@
         tools:layout_height="50dp"
         android:background="@drawable/toolkit_bg_rounded_top_21_gradient_315_darkslateblue_purply"
         app:layout_anchor="@+id/sheet"
-        android:visibility="invisible"
+        android:visibility="gone"
+        tools:visibility="visible"
         app:layout_anchorGravity="bottom|center"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintBottom_toBottomOf="parent"

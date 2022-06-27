@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
                             try {
                                 throw it.exception!!
                             } catch (e: FirebaseAuthInvalidCredentialsException){
-                                Toast.makeText(this, "Email invalido", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Credenciais invalidas", Toast.LENGTH_SHORT).show()
                             } catch (e: FirebaseAuthInvalidUserException){
                                 Toast.makeText(this, "Usuario não cadastrado", Toast.LENGTH_SHORT).show()
                             } catch (e: Exception){

@@ -37,8 +37,20 @@ class AgendarHorasFragment : Fragment() {
         getHorarios(args.agendarSalaHoras.name, args.data)
 
         setListerner()
+        setView()
 
         return view
+    }
+
+    fun setView(){
+
+        binding.button2.isEnabled = false
+
+        if (auxHorario == "18:30 às 20:00 - Disponível"){
+            binding.button2.isEnabled = true
+        } else if (auxHorario == "20:20 às 21:50 - Disponível") {
+            binding.button2.isEnabled = true
+        }
     }
 
     fun setListerner(){
@@ -56,14 +68,15 @@ class AgendarHorasFragment : Fragment() {
             binding.textView62.text = "Você selecionou\n"+binding.textHorario1.text.toString()
             binding.textView62.visibility = View.VISIBLE
             auxHorario = binding.textHorario1.text.toString()
+            setView()
         }
 
         binding.textHorario2.setOnClickListener {
             binding.textView62.text = "Você selecionou\n"+binding.textHorario2.text.toString()
             binding.textView62.visibility = View.VISIBLE
             auxHorario = binding.textHorario2.text.toString()
+            setView()
         }
-
     }
 
     fun getHorarios(sala: String, data: String){

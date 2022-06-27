@@ -37,33 +37,34 @@
         android:id="@+id/animationView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backCadastro"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/loading"
-        app:lottie_loop="true" />
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:textColorHint="#000000"
         app:hintTextColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animationView">
+        app:layout_constraintTop_toBottomOf="@+id/textView30">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textEmailCadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail"
+            android:inputType="textWebEmailAddress|textEmailAddress"
             android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha"
+            android:inputType="textPassword|textWebPassword"
             android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,5 +118,18 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="Bem vindo\na tela de cadastro\ninsira um email e uma senha\npara se cadastrar"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animationView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
